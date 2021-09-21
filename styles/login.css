@@ -1,0 +1,75 @@
+@import url('./common.css');
+
+h1 {
+  color: rgb(116, 116, 116);
+  font-weight: 300;
+  margin-top: 1em;
+  margin-bottom: 4em;
+}
+
+form {
+  position: relative;
+  height: 100vh;
+  width: 30em;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 calc(50% - 15em);
+  box-shadow: 0 5px 5px lightgrey;
+  padding: 2em 4em;
+  box-sizing: border-box;
+}
+
+form:after {
+  position: absolute;
+  content: '';
+  width: .7em;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(var(--primary), var(--secondary));
+}
+
+.image {
+  height: 9em;
+  width: 9em;
+  border-radius: 50%;
+  background-color: var(--app-grey);
+  margin-bottom: 2em;
+}
+
+input {
+  width: 100%;
+  padding: .4em .5em;
+  background-color: var(--app-grey);
+  border: 1px solid var(--app-grey);
+  border-radius: .2em;
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid lightgrey;
+}
+
+label {
+  width: 100%;
+  font-weight: 300;
+  margin-bottom: -.1em;
+  margin-top: 1.5em;
+}
+
+button {
+  padding: .3em 2em;
+  background-color: var(--primary);
+  color: white;
+  margin-top: 5em;
+  font-weight: 400;
+  font-size: 1em;
+}
+
+.form-footer {
+  margin-top: auto;
+  color: grey;
+  font-size: 2em;
+}
