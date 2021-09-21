@@ -21,3 +21,15 @@ button {
   border: none;
   border-radius: 3px;
 }
+
+
+
+ :root .dark{
+  background-color: rgb(19, 19, 19);
+
+ }
+
+  button #tema{
+  border: none;
+  border-radius: 3px;
+ }
