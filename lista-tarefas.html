@@ -29,61 +29,25 @@
 
     <form class="nova-tarefa">
         <div class="not-done "></div>
-        <input type="text" placeholder="Nova tarefa">
-        <button>
+        <input type="text" class="todo-input" placeholder="Nova tarefa">
+        <button class="todo-button" type=submit>
       <img src="./assets/plus.png" alt="Adicionar Tarefa">
     </button>
+    <div class="select">
+        <select name="todos" class="filter-todo">
+            <option value="all">Todas</option>
+            <option value="completed">Completas</option>
+            <option value="uncompleted">Incompletas</option>
+
+        </select>
+        </div>
+
+
     </form>
-
-
-    <ul class="tarefas-pendentes">
+    <div class="todo-container">
         <li class="tarefa">
-            <div class="not-done"></div>
-            <div class="descripcion">
-                <p class="nome">Minha bela tarefa</p>
-                <p class="timestamp">Criada: 19/04/20</p>
-            </div>
-        </li>
-        <li class="tarefa">
-            <div class="not-done"></div>
-            <div class="descripcion">
-                <p class="nome">Minha bela tarefa</p>
-                <p class="timestamp">Criada: 19/04/20</p>
-            </div>
-        </li>
-        <li class="tarefa">
-            <div class="not-done"></div>
-            <div class="descripcion">
-                <p class="nome">Minha bela tarefa</p>
-                <p class="timestamp">Criada: 19/04/20</p>
-            </div>
-        </li>
-    </ul>
-
-    <h2 class="titulo-concluida">Tarefas concluídas</h2>
-    <ul class="titulo-concluida">
-        <li class="tarefa">
-            <div class="not-done"></div>
-            <div class="descripcion">
-                <p class="nome">Minha bela tarefa</p>
-                <p class="timestamp">Criada: 19/04/20</p>
-            </div>
-        </li>
-        <li class="tarefa">
-            <div class="not-done"></div>
-            <div class="descripcion">
-                <p class="nome">Minha bela tarefa</p>
-                <p class="timestamp">Criada: 19/04/20</p>
-            </div>
-        </li>
-        <li class="tarefa">
-            <div class="not-done"></div>
-            <div class="descripcion">
-                <p class="nome">Minha bela tarefa</p>
-                <p class="timestamp">Criada: 19/04/20</p>
-            </div>
-        </li>
-    </ul>
+        <ul class="todo-list"></ul>
+    </div>
 <script src="./js/tarefas.js"></script>
 </body>
 
