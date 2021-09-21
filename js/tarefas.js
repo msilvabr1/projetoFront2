@@ -5,37 +5,42 @@ buttomTema.addEventListener("click", function(){
     body.classList.toggle('dark');
 });
 
-//Selector
+//?Selector
 const todoInput=document.querySelector(".todo-input")
 const todoButton=document.querySelector(".todo-button")
 const todoList=document.querySelector(".todo-list")
 const filterOption=document.querySelector(".filter-todo")
 
 
-//Event listeners
+//?Event listeners
 window.addEventListener('DOMContentLoaded',getTodos);
 todoButton.addEventListener("click",addTodo)
 todoList.addEventListener("click",deleteCheck)
 filterOption.addEventListener("click",filterTodo)
-//Functions
+
+//*Funções
 function addTodo(event) {
     //prevent form from submitting
     event.preventDefault()
     //todo DIV
     const todoDiv = document.createElement("div")
     todoDiv.classList.add("todo")
-    //create LI
+
+    //cria as listas
     const newTodo = document.createElement("li")
     newTodo.innerText=todoInput.value
     newTodo.classList.add("todo-item")
     todoDiv.appendChild(newTodo)
-    // add todo to local storage
+
+    // add todo para o local storage
     saveLocalTodos(todoInput.value)
+
     //check mark button
     const completedButton = document.createElement("button")
     completedButton.innerHTML = "<i class='fas fa-check'></i>"
     completedButton.classList.add("complete-btn")
     todoDiv.appendChild(completedButton)
+
     //check trash button
     const trashButton = document.createElement("button")
     trashButton.innerHTML = "<i class='fas fa-trash'></i>"
