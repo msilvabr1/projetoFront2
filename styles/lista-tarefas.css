@@ -104,11 +104,11 @@ a  {
     position: relative;
     display: flex;
     align-items: center;
-    background-color: white;
+    background-color:#9090f5;
     width: 80%;
     margin: 0 10%;
     padding: 1em;
-    box-shadow: 2px 2px 10px lightgrey;
+    box-shadow: 2px 2px 10px#7bb3ec;
     border-radius: .2em;
     z-index: 20;
 }
