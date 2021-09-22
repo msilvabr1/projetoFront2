@@ -21,6 +21,7 @@ a {
     align-items: center;
     margin-left: auto;
     color: rgb(223, 223, 223);
+  
 }
 
 .user-info p {
@@ -28,12 +29,13 @@ a {
 }
 
 .user-info .user-image {
-    height: 2em;
-    width: 2em;
+    height: 3em;
+    width: 3em;
     border-radius: 50%;
-    background-color: white;
-    opacity: .3;
+    background-color: white ;
     margin-left: .7em;
+    
+    
 }
 
 
@@ -246,6 +248,7 @@ a {
 	padding: 1rem;
 	cursor: pointer;
 	font-size: 1rem;
+    border-radius:50% ;
 
 }
 .complete-btn{
@@ -287,7 +290,7 @@ select{
 .select::after{
 	content: "\25BC";
 	position: absolute;
-	color:#8E64C5;
+	color: #8E64C5;
 	background-color: white;
 	top: 0;
 	right: 0;

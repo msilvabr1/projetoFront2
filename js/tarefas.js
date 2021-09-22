@@ -64,7 +64,7 @@ function deleteCheck(e) {
             todo.remove()
         })
     }
-    //check mark
+    //check mark com toggle
     if (item.classList[0]==="complete-btn") {
         const todo = item.parentElement
         todo.classList.toggle("completed")
