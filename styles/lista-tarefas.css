@@ -78,7 +78,7 @@ a  {
     position: absolute;
     width: 20px;
     height: 20px;
-    background: black;
+    background:#9090f5;
     display: block;
     border-radius: 50%;
     right: unset;
