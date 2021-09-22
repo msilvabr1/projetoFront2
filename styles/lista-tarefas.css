@@ -113,13 +113,25 @@ a  {
     z-index: 20;
 }
 
-.nova-tarefa input[type=text] {
+.nova-tarefa input{
     border: none;
     flex: 1;
     border-bottom: 1px solid lightgrey;
     border-radius: 0;
     padding: .3em;
     font-size: 1.1em;
+    margin: 8px;
+    height: 36.64px;
+}
+
+.nova-tarefa input[type=date]{
+    border: none;
+    flex: 1;
+    border-bottom: 1px solid lightgrey;
+    border-radius: 0;
+    padding: .3em;
+    font-size: 1.1em;
+    margin: 8px;
 }
 
 .nova-tarefa input:focus {
@@ -313,7 +325,6 @@ a  {
 }
 .complete-btn{
 	background-color: rgb(73, 204, 73);
-    
 }
 .todo-item{
 	padding: 0rem 0.5rem;

@@ -7,6 +7,7 @@ toggle.addEventListener("click", function(){
 
 //?Selector
 const todoInput=document.querySelector(".todo-input")
+const dataInput=document.querySelector(".data-input")
 const todoButton=document.querySelector(".todo-button")
 const todoList=document.querySelector(".todo-list")
 const filterOption=document.querySelector(".filter-todo")
@@ -29,33 +30,32 @@ function addTodo(event) {
   //cria as listas e adiciona tarefas com no mínimo 10 caracteres
     const newTodo = document.createElement("li")
     newTodo.innerText=todoInput.value
+
     if(todoInput.value!=0 && todoInput.value.length>=10){   
         newTodo.classList.add("todo-item")
-    todoDiv.appendChild(newTodo)
+        todoDiv.appendChild(newTodo)
+        // add todo para o local storage
+        saveLocalTodos(todoInput.value)
+
+        //check mark button
+        const completedButton = document.createElement("button")
+        completedButton.innerHTML = "<i class='fas fa-check'></i>"
+        completedButton.classList.add("complete-btn")
+        todoDiv.appendChild(completedButton)
+  
+        //check trash button
+        const trashButton = document.createElement("button")
+        trashButton.innerHTML = "<i class='fas fa-trash'></i>"
+        trashButton.classList.add("trash-btn")
+        todoDiv.appendChild(trashButton)
+        //append to lisst
+        todoList.appendChild(todoDiv)
+        //clear todo input value
+        todoInput.value=""
+
     } else {
         alert("Digite uma tarefa válida com no mínimo 10 caracteres");   
-        todoDiv.appendChild("");
-    }
-    
-
-    // add todo para o local storage
-    saveLocalTodos(todoInput.value)
-
-    //check mark button
-    const completedButton = document.createElement("button")
-    completedButton.innerHTML = "<i class='fas fa-check'></i>"
-    completedButton.classList.add("complete-btn")
-    todoDiv.appendChild(completedButton)
-
-    //check trash button
-    const trashButton = document.createElement("button")
-    trashButton.innerHTML = "<i class='fas fa-trash'></i>"
-    trashButton.classList.add("trash-btn")
-    todoDiv.appendChild(trashButton)
-    //append to lisst
-    todoList.appendChild(todoDiv)
-    //clear todo input value
-    todoInput.value=""
+}
 }
 
 function deleteCheck(e) {
