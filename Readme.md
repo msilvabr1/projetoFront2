@@ -16,5 +16,5 @@ Anderson Ribeiro,
 Arthur Ferreira,
 Carlos Augusto,
 Henrique Torres Rosa,
-Matheus Augusto,
-Patricia Sprovieri,
+Matheus Augusto e
+Patricia Sprovieri

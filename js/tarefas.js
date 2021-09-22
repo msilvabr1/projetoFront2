@@ -26,11 +26,17 @@ function addTodo(event) {
     const todoDiv = document.createElement("div")
     todoDiv.classList.add("todo")
 
-    //cria as listas
+  //cria as listas e adiciona tarefas com no mínimo 10 caracteres
     const newTodo = document.createElement("li")
     newTodo.innerText=todoInput.value
-    newTodo.classList.add("todo-item")
+    if(todoInput.value!=0 && todoInput.value.length>=10){   
+        newTodo.classList.add("todo-item")
     todoDiv.appendChild(newTodo)
+    } else {
+        alert("Digite uma tarefa válida com no mínimo 10 caracteres");   
+        todoDiv.appendChild("");
+    }
+    
 
     // add todo para o local storage
     saveLocalTodos(todoInput.value)
