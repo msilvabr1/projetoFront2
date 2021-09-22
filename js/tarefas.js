@@ -5,12 +5,31 @@ toggle.addEventListener("click", function(){
     body.classList.toggle('dark');
 });
 
+
 //?Selector
 const todoInput=document.querySelector(".todo-input")
-const dataInput=document.querySelector(".data-input")
+const dataInput=document.querySelector(".date-input")
 const todoButton=document.querySelector(".todo-button")
 const todoList=document.querySelector(".todo-list")
 const filterOption=document.querySelector(".filter-todo")
+
+//Pegando a data do sistema e colocando a data atual como a mínima
+//possível na seleção
+
+let date = new Date();
+let dia = date.getDate();
+let mes = 1 + date.getMonth();
+let ano = date.getFullYear();
+let data_atual
+if( mes >= 10){
+    data_atual=ano+"-"+mes+"-"+dia
+}else
+    data_atual = ano+"-"+"0"+mes+"-"+dia
+
+console.log(data_atual)
+
+dataInput.value = data_atual;
+dataInput.min = data_atual;
 
 
 //?Event listeners
@@ -54,7 +73,8 @@ function addTodo(event) {
         todoInput.value=""
 
     } else {
-        alert("Digite uma tarefa válida com no mínimo 10 caracteres");   
+        alert("Digite uma tarefa válida com no mínimo 10 caracteres");
+           
 }
 }
 
