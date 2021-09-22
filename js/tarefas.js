@@ -1,7 +1,7 @@
 let body = document.querySelector('body');
 
-let buttomTema = document.querySelector('#tema');
-buttomTema.addEventListener("click", function(){
+let toggle = document.querySelector('#toggle');
+toggle.addEventListener("click", function(){
     body.classList.toggle('dark');
 });
 
@@ -64,7 +64,7 @@ function deleteCheck(e) {
             todo.remove()
         })
     }
-    //check mark com toggle
+    //check mark
     if (item.classList[0]==="complete-btn") {
         const todo = item.parentElement
         todo.classList.toggle("completed")
