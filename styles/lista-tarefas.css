@@ -78,7 +78,7 @@ a  {
     position: absolute;
     width: 20px;
     height: 20px;
-    background: white;
+    background: black;
     display: block;
     border-radius: 50%;
     right: unset;
@@ -181,7 +181,7 @@ a  {
     height: 1.5em;
     width: 1.5em;
     background-color: white;
-    box-shadow: 2px 2px 5px lightgrey;
+    box-shadow: 2px 2px 5px ;
     border: 2px solid var(--secondary);
     z-index: 2;
     transition: background-color 200ms linear;
@@ -341,12 +341,15 @@ select{
 	margin: 1rem;
 	position: relative;
 	overflow: hidden;
+    
 }
 select{
 	color: #8E64C5;
-	width: 10rem;
-	cursor: pointer;
-	padding: 1rem;
+	width: 9rem;
+	cursor:auto;
+	padding: .6em;
+    font-size: 1.1em;
+    
 }
 .select::after{
 	content: "\25BC";
@@ -363,3 +366,5 @@ select{
 	background-color: #8E64C5;
 	color: white;
 }
+
+
