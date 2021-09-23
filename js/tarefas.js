@@ -17,6 +17,10 @@ const filterOption=document.querySelector(".filter-todo")
 //possível na seleção
 
 let date = new Date();
+date.toLocaleString("pt-BR", {timeZone: 'America/Sao_Paulo' })
+
+console.log(date)
+
 let dia = date.getDate();
 let mes = 1 + date.getMonth();
 let ano = date.getFullYear();
