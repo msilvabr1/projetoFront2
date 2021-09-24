@@ -75,15 +75,19 @@ function addTodo(event) {
 
     if(todoInput.value!=0 && todoInput.value.length>=10){   
 
+        let objInfo = {
+            tarefa: todoInput.value,
+            data: dataInput.value
+        }
+    
+        
+        // add todo para o local storage
+        saveLocalTodos(objInfo)
+
         // icone antes da caixa de descrição
         const icontask = document.createElement("img")
         icontask.src="./assets/relozo.png"
         icontask.classList.add("icon-task")
-        
-
-        
-        // add todo para o local storage
-        saveLocalTodos(todoInput.value)
 
         //div que contem a data limite e o texto da tarefa
         const divInfo = document.createElement("div")
@@ -242,7 +246,7 @@ function getTodos() {
         //Tag p para texto da tarefa
         const textoTarefa = document.createElement("p")
         textoTarefa.classList.add("texto")
-        textoTarefa.innerText=todo
+        textoTarefa.innerText=todo.tarefa
  
         //Tag p "Data limite"
         const textoLimite = document.createElement("p")
@@ -250,7 +254,7 @@ function getTodos() {
  
         //Tag p "Conteudo da data"
         const conteudoData = document.createElement("p")
-        conteudoData.innerText = dataInput.value   
+        conteudoData.innerText = todo.data   
  
  
  
