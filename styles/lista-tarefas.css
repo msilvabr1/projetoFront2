@@ -318,9 +318,7 @@ a  {
 	cursor: pointer;
 	font-size: 1rem;
 }
-.complete-btn{
 
-}
 .todo-item{
 	padding: 0rem 0.5rem;
 }
@@ -388,9 +386,7 @@ select{
 
 }
 
-.divButtons{
 
-}
 
 .descricao{
     display: flex;
@@ -414,3 +410,45 @@ select{
     flex-direction: row;
     gap: 0.4em;
 }
+
+@media screen and (max-width: 600px) and (min-width: 200px), (min-width: 700px) {
+    .nova-tarefa {
+     
+      display:flex-wrap wrap;
+      flex-direction:column;
+      align-content: center;
+      justify-content: center;
+      align-items: center;  
+    }
+}
+
+@media screen and (max-width: 600px) and (min-width: 200px), (min-width: 700px) {
+    .nova-tarefa {
+     
+      display:flex-wrap wrap;
+      flex-direction:column;
+      align-content: center;
+      justify-content: center;
+      align-items: center;  
+    }
+    header{
+        padding: 0.3em;;
+    }
+}
+  
+  
+
+  @media screen and (max-width: 1400px) and (min-width: 1000px), (min-width: 800px) {
+    .nova-tarefa {
+      padding: 30px;
+      display:flex;
+      flex-direction:row;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+      
+    }
+  }
+
+
+
