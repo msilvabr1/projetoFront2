@@ -88,6 +88,7 @@ function addTodo(event) {
         //Caixa de descrição
         const descricao = document.createElement("div") 
         descricao.classList.add("descricao")
+        
 
         //Tag p para texto da tarefa
         const textoTarefa = document.createElement("p")
