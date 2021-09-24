@@ -85,17 +85,39 @@ function addTodo(event) {
         // add todo para o local storage
         saveLocalTodos(todoInput.value)
 
+        //div que contem a data limite e o texto da tarefa
+        const divInfo = document.createElement("div")
+        divInfo.classList.add("divInfo")
+
         //Caixa de descrição
         const descricao = document.createElement("div") 
         descricao.classList.add("descricao")
+
+        //div que contem as tags p "Data limite" e "Conteudo da data"
+        const containerData = document.createElement("containerData")
+        containerData.classList.add("containerData")
 
         //Tag p para texto da tarefa
         const textoTarefa = document.createElement("p")
         textoTarefa.classList.add("texto")
         textoTarefa.innerText=todoInput.value
 
+        //Tag p "Data limite"
+        const textoLimite = document.createElement("p")
+        textoLimite.innerText="Data limite :"
+
+        //Tag p "Conteudo da data"
+        const conteudoData = document.createElement("p")
+        conteudoData.innerText = dataInput.value   
+
+
+
         newTodo.appendChild(icontask)
-        descricao.appendChild(textoTarefa)
+        divInfo.appendChild(textoTarefa)
+        divInfo.appendChild(containerData)
+        containerData.appendChild(textoLimite)
+        containerData.appendChild(conteudoData)
+        descricao.appendChild(divInfo)
         newTodo.appendChild(descricao)
 
         // div que contem os buttons
@@ -205,17 +227,40 @@ function getTodos() {
         //create LI
         const newTodo = document.createElement("li")
         newTodo.classList.add("todo-item")
+        //div que contem a data limite e o texto da tarefa
+        const divInfo = document.createElement("div")
+        divInfo.classList.add("divInfo")
+ 
         //Caixa de descrição
         const descricao = document.createElement("div") 
         descricao.classList.add("descricao")
+ 
+        //div que contem as tags p "Data limite" e "Conteudo da data"
+        const containerData = document.createElement("containerData")
+        containerData.classList.add("containerData")
+ 
         //Tag p para texto da tarefa
         const textoTarefa = document.createElement("p")
         textoTarefa.classList.add("texto")
         textoTarefa.innerText=todo
-
-        newTodo.appendChild(icontask)
-        descricao.appendChild(textoTarefa)
-        newTodo.appendChild(descricao)
+ 
+        //Tag p "Data limite"
+        const textoLimite = document.createElement("p")
+        textoLimite.innerText="Data limite :"
+ 
+        //Tag p "Conteudo da data"
+        const conteudoData = document.createElement("p")
+        conteudoData.innerText = dataInput.value   
+ 
+ 
+ 
+         newTodo.appendChild(icontask)
+         divInfo.appendChild(textoTarefa)
+         divInfo.appendChild(containerData)
+         containerData.appendChild(textoLimite)
+         containerData.appendChild(conteudoData)
+         descricao.appendChild(divInfo)
+         newTodo.appendChild(descricao)
 
         // div que contem os buttons
         const divButtons = document.createElement("div")
