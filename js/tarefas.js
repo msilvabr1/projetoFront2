@@ -178,7 +178,7 @@ function getTodos() {
     todos.forEach(function(todo) {
         // icone antes da caixa de descrição
         const icontask = document.createElement("img")
-        icontask.src="./assets/study.png"
+        icontask.src="assets/relozo.png"
         icontask.classList.add("icon-task")
                
         //create LI
