@@ -313,6 +313,7 @@ a  {
 .todo li{
 	flex: 1;
 }
+<<<<<<< HEAD
 .trash-btn{
 	background-color:red;
 	color: white;
@@ -334,6 +335,14 @@ a  {
 	font-size: 1rem;
     border-radius: 50px;
     margin-left: auto;
+=======
+.trash-btn, .complete-btn{
+	padding: 0.5rem;
+	cursor: pointer;
+	font-size: 1rem;
+}
+.complete-btn{
+>>>>>>> ad6b060ecd938cd28f0abb6f5ac8a1c9106803a2
 
 }
 .todo-item{
@@ -403,7 +412,9 @@ select{
 
 }
 
+.divButtons{
 
+}
 
 .descricao{
     display: flex;
