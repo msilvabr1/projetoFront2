@@ -98,17 +98,23 @@ function addTodo(event) {
         descricao.appendChild(textoTarefa)
         newTodo.appendChild(descricao)
 
+        // div que contem os buttons
+        const divButtons = document.createElement("div")
+        divButtons.classList.add("divButtons")
+
+        descricao.appendChild(divButtons)
+
         //check mark button
-        const completedButton = document.createElement("button")
-        completedButton.innerHTML = "<i class='fas fa-check'></i>"
+        const completedButton = document.createElement("img")
+        completedButton.src = "./assets/check-mark-8-32.png"
         completedButton.classList.add("complete-btn")
-        descricao.appendChild(completedButton)
+        divButtons.appendChild(completedButton)
   
         //check trash button
-        const trashButton = document.createElement("button")
-        trashButton.innerHTML = "<i class='fas fa-trash'></i>"
+        const trashButton = document.createElement("img")
+        trashButton.src = "./assets/x-mark-5-32.png"
         trashButton.classList.add("trash-btn")
-        descricao.appendChild(trashButton)
+        divButtons.appendChild(trashButton)
         //append to lisst
         todoList.appendChild(newTodo)
         //clear todo input value
@@ -124,8 +130,7 @@ function deleteCheck(e) {
     item = e.target    
     //delete todo
     if (item.classList[0]==="trash-btn") {
-        let todo=item.parentElement
-        todo= todo.parentElement
+        let todo=item.parentElement.parentElement.parentElement
         //animation
         todo.classList.add("fall")
         removeLocalTodos(todo)
@@ -135,8 +140,7 @@ function deleteCheck(e) {
     }
     //check mark
     if (item.classList[0]==="complete-btn") {
-        let todo=item.parentElement
-        todo= todo.parentElement
+        let todo=item.parentElement.parentElement.parentElement
         todo.classList.toggle("completed")
     }
 }
@@ -213,16 +217,23 @@ function getTodos() {
         descricao.appendChild(textoTarefa)
         newTodo.appendChild(descricao)
 
+        // div que contem os buttons
+        const divButtons = document.createElement("div")
+        divButtons.classList.add("divButtons")
+
+        descricao.appendChild(divButtons)
+
         //check mark button
-        const completedButton = document.createElement("button")
-        completedButton.innerHTML = "<i class='fas fa-check'></i>"
+        const completedButton = document.createElement("img")
+        completedButton.src = "./assets/check-mark-8-32.png"
         completedButton.classList.add("complete-btn")
-        descricao.appendChild(completedButton)
+        divButtons.appendChild(completedButton)
+  
         //check trash button
-        const trashButton = document.createElement("button")
-        trashButton.innerHTML = "<i class='fas fa-trash'></i>"
+        const trashButton = document.createElement("img")
+        trashButton.src = "./assets/x-mark-5-32.png"
         trashButton.classList.add("trash-btn")
-        descricao.appendChild(trashButton)
+        divButtons.appendChild(trashButton)
          //append to lisst
         todoList.appendChild(newTodo)
     })
