@@ -92,6 +92,7 @@ function addTodo(event) {
         //Caixa de descrição
         const descricao = document.createElement("div") 
         descricao.classList.add("descricao")
+        
 
         //div que contem as tags p "Data limite" e "Conteudo da data"
         const containerData = document.createElement("containerData")
