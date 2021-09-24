@@ -297,6 +297,9 @@ a  {
 .todo-list{
 	min-width: 30%;
 	list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin: 2em 15%;
 }
 .todo{
 	margin: 0.5rem;
@@ -306,7 +309,7 @@ a  {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	transition: all 0.5s ease;
+	
 
 }
 .todo li{
@@ -378,4 +381,29 @@ select{
 	color: white;
 }
 
+.todo-item{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5em;
+    transition: all 0.5s ease;
+}
 
+.icon-task{
+
+    width: 2.5em;
+    padding-right: 1em;
+
+
+}
+
+
+
+.descricao{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    background-color: white;
+    padding: 1em 2em;
+    box-shadow: 2px 2px 5px lightgrey;
+}
