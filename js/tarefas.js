@@ -5,6 +5,23 @@ toggle.addEventListener("click", function(){
     body.classList.toggle('dark');
 });
 
+(function getDate() {
+    let dataAtual = new Date();
+    let mes = dataAtual.getMonth() + 1; // January is month 0
+    let dia = dataAtual.getDate();
+    let ano = dataAtual.getFullYear();
+  
+    // pegando o elemento para aparecer a data
+    var display_date = document.getElementById("display-date");
+    // append date to element
+    display_date.innerHTML =
+      dia +
+      "/" +
+      mes +
+      "/" +
+      ano;
+  })();
+
 
 //?Selector
 const todoInput=document.querySelector(".todo-input")
