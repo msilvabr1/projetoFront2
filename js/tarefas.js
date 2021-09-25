@@ -30,10 +30,12 @@ const todoButton=document.querySelector(".todo-button")
 const todoList=document.querySelector(".todo-list")
 const filterOption=document.querySelector(".filter-todo")
 
+
 //Pegando a data do sistema e colocando a data atual como a mínima
 //possível na seleção
 
 let date = new Date();
+
 //Converte a data e hora para o fuso de São Paulo
 date.toLocaleString("pt-BR", {timeZone: 'America/Sao_Paulo' })
 
@@ -46,7 +48,8 @@ let data_atual
 if( mes >= 10){
     data_atual=ano+"-"+mes+"-"+dia
 }else
-    data_atual = ano+"-"+"0"+mes+"-"+dia
+    mes ="0"+mes
+    data_atual = ano+"-"+mes+"-"+dia
 
 console.log(data_atual)
 
@@ -73,7 +76,23 @@ function addTodo(event) {
     newTodo.classList.add("todo-item")
     //newTodo.innerText=todoInput.value
 
-    if(todoInput.value!=0 && todoInput.value.length>=10){   
+  //Valida o input da data
+  let anoinput = dataInput.value.slice(0,4);
+  let mesinput = dataInput.value.slice(5,7);
+  let diainput = dataInput.value.slice(8);
+  let datavalida;  
+
+  if(anoinput > ano)
+    datavalida = true;
+  else if(mesinput > mes && anoinput>= ano)
+    datavalida = true;
+  else if(diainput >= dia && mesinput >= mes && anoinput>= ano)  
+    datavalida = true;
+    else
+    datavalida = false;
+
+   
+    if(todoInput.value!=0 && todoInput.value.length>=10 && datavalida){   
 
         let objInfo = {
             tarefa: todoInput.value,
@@ -146,8 +165,18 @@ function addTodo(event) {
         //clear todo input value
         todoInput.value=""
 
-    } else {
+    } 
+    else if(todoInput.value= 0 || todoInput.value.length<10 && datavalida != true) {
+        alert("Digita uma tarefa com no mínimo 10 caracteres e escolha uma data limite futura")
+        todoInput.value=""
+    }
+    else if(!datavalida){
+        alert("Escolha uma data que esteja no futuro")
+        todoInput.value=""
+    }
+    else{
         alert("Digite uma tarefa válida com no mínimo 10 caracteres");
+        todoInput.value=""
            
 }
 }
