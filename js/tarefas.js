@@ -76,12 +76,16 @@ function addTodo(event) {
     newTodo.classList.add("todo-item")
     //newTodo.innerText=todoInput.value
 
-  //Valida o input da data
+  //Muda o formato da data do input do usuário 
+
   let anoinput = dataInput.value.slice(0,4);
   let mesinput = dataInput.value.slice(5,7);
   let diainput = dataInput.value.slice(8);
   let datavalida;  
 
+  let datalimite = diainput+"-"+mesinput+"-"+anoinput
+  
+  //Valida o input da data
   if(anoinput > ano)
     datavalida = true;
   else if(mesinput > mes && anoinput>= ano)
@@ -92,11 +96,13 @@ function addTodo(event) {
     datavalida = false;
 
    
+
+   
     if(todoInput.value!=0 && todoInput.value.length>=10 && datavalida){   
 
         let objInfo = {
             tarefa: todoInput.value,
-            data: dataInput.value
+            data: datalimite
         }
     
         
@@ -131,7 +137,7 @@ function addTodo(event) {
 
         //Tag p "Conteudo da data"
         const conteudoData = document.createElement("p")
-        conteudoData.innerText = dataInput.value   
+        conteudoData.innerText = datalimite   
 
 
 
