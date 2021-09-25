@@ -67,14 +67,6 @@ filterOption.addEventListener("click",filterTodo)
 function addTodo(event) {
     //prevent form from submitting
     event.preventDefault()
-    //todo DIV
-    const todoDiv = document.createElement("div")
-    todoDiv.classList.add("todo")
-
-  //cria as listas e adiciona tarefas com no mínimo 10 caracteres
-    const newTodo = document.createElement("li")
-    newTodo.classList.add("todo-item")
-    //newTodo.innerText=todoInput.value
 
   //Muda o formato da data do input do usuário 
 
@@ -95,16 +87,25 @@ function addTodo(event) {
     else
     datavalida = false;
 
-   
+
 
    
     if(todoInput.value!=0 && todoInput.value.length>=10 && datavalida){   
 
-        let objInfo = {
+        let numeroId = Math.random()   
+        
+        let objInfo ={
+            id: numeroId,
             tarefa: todoInput.value,
-            data: datalimite
+            data: datalimite,
+            completed: false
         }
-    
+        
+        
+        //cria as listas e adiciona tarefas com no mínimo 10 caracteres
+        const newTodo = document.createElement("li")
+        newTodo.setAttribute('id', numeroId)
+        newTodo.classList.add("todo-item")
         
         // add todo para o local storage
         saveLocalTodos(objInfo)
@@ -200,9 +201,28 @@ function deleteCheck(e) {
         })
     }
     //check mark
+    let todoarray = JSON.parse(localStorage.getItem("todos"))
     if (item.classList[0]==="complete-btn") {
         let todo=item.parentElement.parentElement.parentElement
         todo.classList.toggle("completed")
+        if(!todo.classList.contains("completed"))
+            todoarray.forEach(function(el){
+                if(el.id ==todo.id)
+                el.completed = false;
+                localStorage.setItem("todos",JSON.stringify(todoarray))
+                
+            }
+            )
+
+
+        else if(todo.classList.contains("completed")){
+            todoarray.forEach(function(el){
+                if(el.id==todo.id)
+                el.completed = true;
+                localStorage.setItem("todos",JSON.stringify(todoarray))
+            })
+        }    
+
     }
 }
 
@@ -265,7 +285,11 @@ function getTodos() {
                
         //create LI
         const newTodo = document.createElement("li")
+        newTodo.setAttribute('id', todo.id)
         newTodo.classList.add("todo-item")
+        if(todo.completed){
+            newTodo.classList.add("completed")
+        }
         //div que contem a data limite e o texto da tarefa
         const divInfo = document.createElement("div")
         divInfo.classList.add("divInfo")
