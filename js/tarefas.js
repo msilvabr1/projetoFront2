@@ -191,7 +191,12 @@ function addTodo(event) {
 function deleteCheck(e) {
     item = e.target    
     //delete todo
+    
     if (item.classList[0]==="trash-btn") {
+        
+        if(confirm('Tem certeza que deseja excluir essa tarefa?')){
+
+
         let todo=item.parentElement.parentElement.parentElement
         //animation
         todo.classList.add("fall")
@@ -199,6 +204,8 @@ function deleteCheck(e) {
         todo.addEventListener("transitionend",function () {
             todo.remove()
         })
+
+        }
     }
     //check mark
     let todoarray = JSON.parse(localStorage.getItem("todos"))
