@@ -178,7 +178,7 @@ function addTodo(event) {
         todoInput.value=""
     }
     else if(!datavalida){
-        alert("Escolha uma data que esteja no futuro")
+        alert("Escolha uma data que esteja no dia de hoje ou no futuro")
         todoInput.value=""
     }
     else{
