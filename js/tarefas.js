@@ -189,52 +189,67 @@ function addTodo(event) {
 }
 
 function deleteCheck(e) {
-    item = e.target    
+    item = e.target
+    let todo     
     //delete todo
     
     if (item.classList[0]==="trash-btn") {
-        
+       
         if(confirm('Tem certeza que deseja excluir essa tarefa?')){
+            
+            //Estrutura para acessar o elemento html especifico com a classe "todo-item", que é o container pai da tarefa,
+            //apartir do botão que levou o click: "item = e.target"
+            // Antes estava "todo = item.parentElement.parentElement.ParentElement", com essa estrutura o código
+            //fica muito mais funcional
 
-
-        let todo=item.parentElement.parentElement.parentElement
-        //animation
-        todo.classList.add("fall")
-        removeLocalTodos(todo)
-        todo.addEventListener("transitionend",function () {
+            while(!item.parentElement.classList.contains("todo-item")){
+                item = item.parentElement
+            }if(item.parentElement.classList.contains("todo-item"))
+                item = item.parentElement      
+           
+            todo = item    
+            //animation
+            todo.classList.add("fall")
+            removeLocalTodos(todo)
+            todo.addEventListener("transitionend",function () {
             todo.remove()
         })
 
         }
     }
+
     //check mark
     let todoarray = JSON.parse(localStorage.getItem("todos"))
     if (item.classList[0]==="complete-btn") {
-        let todo=item.parentElement.parentElement.parentElement
+
+        while(!item.parentElement.classList.contains("todo-item")){
+            item = item.parentElement
+        }if(item.parentElement.classList.contains("todo-item"))
+            item = item.parentElement      
+       
+        todo = item    
         todo.classList.toggle("completed")
+
         if(!todo.classList.contains("completed"))
             todoarray.forEach(function(el){
                 if(el.id ==todo.id)
-                el.completed = false;
-                localStorage.setItem("todos",JSON.stringify(todoarray))
-                
-            }
-            )
+                el.completed = false;       
+            })
 
 
-        else if(todo.classList.contains("completed")){
+        else if(todo.classList.contains("completed"))"{
             todoarray.forEach(function(el){
                 if(el.id==todo.id)
                 el.completed = true;
-                localStorage.setItem("todos",JSON.stringify(todoarray))
             })
         }    
-
+    
+    localStorage.setItem("todos",JSON.stringify(todoarray))    
     }
 }
 
 //Tive que colocar esse if  (index != 0), em FilterTodo, pois o primeiro elemento, o de indice 0, da NodeList
-//"todos" é uma string vazia que é gerada junto com o card das atividades, ou seja,
+//"todos" é uma string vazia que (as vezes) é gerada junto com o card das atividades, ou seja,
 // ela também é um childnode. Não entendi o que faz ela aparecer no html - Arthur
 
 function filterTodo(e) {
