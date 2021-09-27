@@ -9,7 +9,7 @@ h1 {
 
 form {
   position: relative;
-  height: 100vh;
+  height: 110vh;
   width: 30em;
   background-color: white;
   display: flex;
@@ -84,7 +84,7 @@ div > div {
   padding: .3em 2em;
   background-color: var(--primary);
   color: white;
-  margin-top: 5em;
+  margin-top: 3em;
   font-weight: 400;
   font-size: 1em;
   margin-left: 5px;
