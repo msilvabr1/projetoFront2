@@ -9,7 +9,7 @@ h1 {
 
 form {
   position: relative;
-  height: 110vh;
+  height: 100vh;
   width: 30em;
   background-color: white;
   display: flex;
@@ -19,6 +19,10 @@ form {
   box-shadow: 0 5px 5px lightgrey;
   padding: 2em 4em;
   box-sizing: border-box;
+}
+
+.botoes {
+  margin-top: -20px;
 }
 
 form:after {
@@ -35,8 +39,8 @@ form:after {
   height: 9em;
   width: 9em;
   border-radius: 50%;
-  background-color: var(--app-grey);
-  margin-bottom: 2em;
+  margin-bottom: -1em;
+  margin-top: -47px;
 }
 
 input {
@@ -156,7 +160,7 @@ div > div {
   border-bottom: 2px solid red;
 }
 .label-float input:required:invalid + label:before{
-  content: '*';
+  content: '';
 }
 .label-float input:focus + label,
 .label-float input:not(:placeholder-shown) + label{
