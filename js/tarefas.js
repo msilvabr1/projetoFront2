@@ -237,7 +237,7 @@ function deleteCheck(e) {
             })
 
 
-        else if(todo.classList.contains("completed"))"{
+        else if(todo.classList.contains("completed")){
             todoarray.forEach(function(el){
                 if(el.id==todo.id)
                 el.completed = true;
