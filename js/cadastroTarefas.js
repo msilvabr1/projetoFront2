@@ -14,7 +14,7 @@ produto=api.then(res => res.clone().json()).then(json => {
     if(produto.completed&&produto.id<=count){
     let card = `
       <div class="card2">
-        <img src="./assets/img_avatar2.png" alt="Avatar" style="width:100%">
+        <img src="./assets/img_avatar2.jpg" alt="Avatar" style="width:100%">
         <div class="container2">
           <h3>${produto.userId}</h3>
           <strong>${produto.id}</strong>
@@ -29,7 +29,7 @@ produto=api.then(res => res.clone().json()).then(json => {
       if(!produto.completed&&produto.id<=count){
         let card = `
         <div class="card2">
-        <img src="./assets/img_avatar.png" alt="Avatar" style="width:100%">
+        <img src="./assets/img_avatar.jpg" alt="Avatar" style="width:100%">
         <div class="container2">
           <h3>${produto.userId}</h3>
           <strong>${produto.id}</strong>
