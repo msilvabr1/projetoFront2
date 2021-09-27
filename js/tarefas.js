@@ -5,24 +5,7 @@ toggle.addEventListener("click", function(){
     body.classList.toggle('dark');
 });
 
-(function getDate() {
-    let dataAtual = new Date();
-    let mes = dataAtual.getMonth() + 1; // January is month 0
-    let dia = dataAtual.getDate();
-    let ano = dataAtual.getFullYear();
-  
-    // pegando o elemento para aparecer a data
-    var display_date = document.getElementById("display-date");
-    // append date to element
-    display_date.innerHTML =
-      dia +
-      "/" +
-      mes +
-      "/" +
-      ano;
-  })();
-
-
+ 
 //?Selector
 const todoInput=document.querySelector(".todo-input")
 const dataInput=document.querySelector(".date-input")
@@ -38,8 +21,6 @@ let date = new Date();
 
 //Converte a data e hora para o fuso de São Paulo
 date.toLocaleString("pt-BR", {timeZone: 'America/Sao_Paulo' })
-
-console.log(date)
 
 let dia = date.getDate();
 let mes = 1 + date.getMonth();
@@ -57,40 +38,77 @@ dataInput.value = data_atual;
 dataInput.min = data_atual;
 
 
+// pegando o elemento para aparecer a data
+var display_date = document.getElementById("display-date");
+// append date to element
+display_date.innerHTML = dia + "/"+mes +"/" +ano;
+
+
 //?Event listeners
 window.addEventListener('DOMContentLoaded',getTodos);
 todoButton.addEventListener("click",addTodo)
 todoList.addEventListener("click",deleteCheck)
 filterOption.addEventListener("click",filterTodo)
 
+
 //*Funções
+//Variavel para função dataValidator
+let datalimite
+
+function dataValidator(dataElemento,dataArmazenada){
+
+    //A data armazenada usa uma estrutura diferente na função da data ainda nao armazenda, 
+    //pois a data armazenada ja foi formatada
+
+    if(dataArmazenada){
+        let diainput = dataElemento.slice(0,2);
+        let mesinput = dataElemento.slice(3,5);
+        let anoinput = dataElemento.slice(6);
+        let datavalida;
+    
+        if(anoinput > ano)
+            datavalida = true;
+            else if(mesinput > mes && anoinput>= ano)
+            datavalida = true;
+            else if(diainput >= dia && mesinput >= mes && anoinput>= ano)  
+            datavalida = true;
+            else
+            datavalida = false;
+    return datavalida        
+    }
+
+    else{
+        let anoinput = dataElemento.slice(0,4);
+        let mesinput = dataElemento.slice(5,7);
+        let diainput = dataElemento.slice(8);
+        let datavalida;
+
+        if(anoinput > ano)
+            datavalida = true;
+            else if(mesinput > mes && anoinput>= ano)
+            datavalida = true;
+            else if(diainput >= dia && mesinput >= mes && anoinput>= ano)  
+            datavalida = true;
+            else
+            datavalida = false;
+        
+            //Muda o formato da data do input do usuário 
+            if(datavalida)
+            datalimite = diainput+"-"+mesinput+"-"+anoinput
+            
+
+            return datavalida
+    }    
+}
+
+
 function addTodo(event) {
+
     //prevent form from submitting
     event.preventDefault()
 
-  //Muda o formato da data do input do usuário 
-
-  let anoinput = dataInput.value.slice(0,4);
-  let mesinput = dataInput.value.slice(5,7);
-  let diainput = dataInput.value.slice(8);
-  let datavalida;  
-
-  let datalimite = diainput+"-"+mesinput+"-"+anoinput
-  
-  //Valida o input da data
-  if(anoinput > ano)
-    datavalida = true;
-  else if(mesinput > mes && anoinput>= ano)
-    datavalida = true;
-  else if(diainput >= dia && mesinput >= mes && anoinput>= ano)  
-    datavalida = true;
-    else
-    datavalida = false;
-
-
-
-   
-    if(todoInput.value!=0 && todoInput.value.length>=10 && datavalida){   
+    console.log(dataInput.value)
+    if(todoInput.value!=0 && todoInput.value.length>=10 && dataValidator(dataInput.value)){   
 
         let numeroId = Math.random()   
         
@@ -138,7 +156,8 @@ function addTodo(event) {
 
         //Tag p "Conteudo da data"
         const conteudoData = document.createElement("p")
-        conteudoData.innerText = datalimite   
+        conteudoData.innerText = datalimite
+        conteudoData.setAttribute('class',"conteudo-data")      
 
 
 
@@ -173,11 +192,11 @@ function addTodo(event) {
         todoInput.value=""
 
     } 
-    else if(todoInput.value= 0 || todoInput.value.length<10 && datavalida != true) {
-        alert("Digita uma tarefa com no mínimo 10 caracteres e escolha uma data limite futura")
+    else if(todoInput.value= 0 || todoInput.value.length<10 && !dataValidator(dataInput.value)) {
+        alert("Digita uma tarefa com no mínimo 10 caracteres e escolha uma data limite no dia atual/no futuro")
         todoInput.value=""
     }
-    else if(!datavalida){
+    else if(!dataValidator(dataInput.value)){
         alert("Escolha uma data que esteja no dia de hoje ou no futuro")
         todoInput.value=""
     }
@@ -333,11 +352,11 @@ function getTodos() {
         const textoLimite = document.createElement("p")
         textoLimite.innerText="Data limite :"
  
-        //Tag p "Conteudo da data"
+        //Tag p "Conteudo da data
         const conteudoData = document.createElement("p")
-        conteudoData.innerText = todo.data   
- 
- 
+        conteudoData.innerText = todo.data
+        conteudoData.setAttribute('class',"conteudo-data")
+
  
          newTodo.appendChild(icontask)
          divInfo.appendChild(textoTarefa)
@@ -357,12 +376,25 @@ function getTodos() {
         const completedButton = document.createElement("img")
         completedButton.src = "./assets/check-mark-8-32.png"
         completedButton.classList.add("complete-btn")
+        
+        //Se a tarefa salva tiver sido expirada
+        if(!dataValidator(todo.data,true) && !todo.completed){
+            icontask.src = "assets/relozovermelho.png"
+            completedButton.classList.add("expired")
+            let textoLimite = document.createElement("p")
+            textoLimite.setAttribute("class", "textoLimite")
+            textoLimite.innerText= "A data limite foi atingida!"
+            containerData.appendChild(textoLimite)
+        }
+      
         divButtons.appendChild(completedButton)
   
         //check trash button
         const trashButton = document.createElement("img")
         trashButton.src = "./assets/x-mark-5-32.png"
         trashButton.classList.add("trash-btn")
+    
+
         divButtons.appendChild(trashButton)
          //append to lisst
         todoList.appendChild(newTodo)
@@ -383,3 +415,4 @@ function removeLocalTodos(todo) {
     todos.splice(todos.indexOf(todoIndex),1)
     localStorage.setItem("todos",JSON.stringify(todos))
 }
+

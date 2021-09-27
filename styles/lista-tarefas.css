@@ -318,6 +318,10 @@ a:hover {
 	font-size: 1rem;
 }
 
+.expired{
+    display: none;
+}
+
 .todo-item{
 	padding: 0rem 0.5rem;
 }
@@ -409,6 +413,13 @@ select{
     display: flex;
     flex-direction: row;
     gap: 0.4em;
+}
+
+
+.textoLimite{
+    color:red;
+    text-decoration: underline;
+ 
 }
 
 @media screen and (max-width: 600px) and (min-width: 200px), (min-width: 700px) {
