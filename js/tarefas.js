@@ -124,7 +124,7 @@ function addTodo(event) {
         descricao.classList.add("descricao")
 
         //div que contem as tags p "Data limite" e "Conteudo da data"
-        const containerData = document.createElement("containerData")
+        const containerData = document.createElement("div")
         containerData.classList.add("containerData")
 
         //Tag p para texto da tarefa
@@ -321,7 +321,7 @@ function getTodos() {
         descricao.classList.add("descricao")
  
         //div que contem as tags p "Data limite" e "Conteudo da data"
-        const containerData = document.createElement("containerData")
+        const containerData = document.createElement("div")
         containerData.classList.add("containerData")
  
         //Tag p para texto da tarefa
