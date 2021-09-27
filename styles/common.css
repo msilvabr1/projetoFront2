@@ -23,19 +23,15 @@ button {
 }
 
 
-
- :root .dark{
+:root .dark {
   background-color: rgb(19, 19, 19);
 
- }
+}
 
-#tema{
+#tema {
   border: 20px;
-  border-radius:33px;
+  border-radius: 33px;
   background-color: rgb(19, 19, 19);
   color: #F2F2F2;
   margin-left: 25px;
-} 
-
-
- 
+}

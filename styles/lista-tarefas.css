@@ -1,4 +1,5 @@
 @import url('./common.css');
+
 header {
     display: flex;
     background: linear-gradient(90deg, var(--primary), var(--secondary));
@@ -6,7 +7,7 @@ header {
     margin-bottom: 2em;
 }
 
-a  {
+a {
     display: block;
     width: fit-content;
     padding: .7em 1em;
@@ -14,25 +15,27 @@ a  {
     color: white
 }
 
-a:link, a:visited {
-	text-decoration: none;
+a:link,
+a:visited {
+    text-decoration: none;
     transition: 1s;
-	}
-a:hover {
-	text-decoration: none;
-	color: #d3d3d386;
-    transition: 1s;
-	}
+}
 
-.darkMode{
-    display:block;
+a:hover {
+    text-decoration: none;
+    color: #d3d3d386;
+    transition: 1s;
+}
+
+.darkMode {
+    display: block;
     padding: .7em 1em;
     text-decoration: none;
     color: white;
-    margin-left: auto;   
+    margin-left: auto;
 }
 
-.darkMode p{
+.darkMode p {
     text-transform: capitalize;
 }
 
@@ -42,7 +45,7 @@ a:hover {
     margin-left: auto;
     color: #8E64C5;
     height: 3em;
-    width: 9.5em; 
+    width: 9.5em;
 }
 
 .user-info p {
@@ -55,7 +58,7 @@ a:hover {
     border-radius: 50%;
     margin-left: 3px;
     cursor: pointer;
-     
+
 }
 
 /* Animacao para botao Dark Mode */
@@ -63,8 +66,8 @@ a:hover {
 .toggle {
     display: none;
 }
- 
-.toggle + label {
+
+.toggle+label {
     width: 32px;
     height: 20px;
     background: lightgray;
@@ -77,12 +80,12 @@ a:hover {
     margin: 10px 0px;
 }
 
-.toggle + label:before{
+.toggle+label:before {
     content: '';
     position: absolute;
     width: 20px;
     height: 20px;
-    background:#9090f5;
+    background: #9090f5;
     display: block;
     border-radius: 50%;
     right: unset;
@@ -91,14 +94,14 @@ a:hover {
     transition: .2s;
 }
 
-.toggle:checked+label{
-    background:#7bb3ec;
+.toggle:checked+label {
+    background: #7bb3ec;
 }
 
-.toggle:checked + label::before{
+.toggle:checked+label::before {
     content: '';
     left: calc(100% - 22px);
-    
+
 }
 
 
@@ -108,7 +111,7 @@ a:hover {
     position: relative;
     display: flex;
     align-items: center;
-    background-color:#9090f5;
+    background-color: #9090f5;
     width: 80%;
     margin: 0 10%;
     padding: 1em;
@@ -118,7 +121,7 @@ a:hover {
     border-radius: 25px;
 }
 
-.nova-tarefa input{
+.nova-tarefa input {
     border: none;
     flex: 1;
     border-bottom: 1px solid lightgrey;
@@ -130,7 +133,7 @@ a:hover {
     border-radius: 15px;
 }
 
-.nova-tarefa input[type=date]{
+.nova-tarefa input[type=date] {
     border: none;
     flex: 1;
     border-bottom: 1px solid lightgrey;
@@ -190,7 +193,7 @@ a:hover {
     height: 1.5em;
     width: 1.5em;
     background-color: white;
-    box-shadow: 2px 2px 5px ;
+    box-shadow: 2px 2px 5px;
     border: 2px solid var(--secondary);
     z-index: 2;
     transition: background-color 200ms linear;
@@ -286,102 +289,116 @@ a:hover {
     text-decoration: line-through;
 }
 
-.todo-container{
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.todo-list{
-	min-width: 30%;
-	list-style: none;
+
+.todo-list {
+    min-width: 30%;
+    list-style: none;
     display: flex;
     flex-direction: column;
     margin: 2em 15%;
 }
-.todo{
-	margin: 0.5rem;
-	background-color: white;
-	color: black;
-	font-size: 1.5rem;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	
+
+.todo {
+    margin: 0.5rem;
+    background-color: white;
+    color: black;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
 
 }
-.todo li{
-	flex: 1;
-}
-.trash-btn, .complete-btn{
-	padding: 0.5rem;
-	cursor: pointer;
-	font-size: 1rem;
+
+.todo li {
+    flex: 1;
 }
 
-.expired{
+.trash-btn,
+.complete-btn {
+    padding: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.expired {
     display: none;
 }
 
-.todo-item{
-	padding: 0rem 0.5rem;
-}
-.fa-trash,.fa-check{
-	pointer-events: none;
-}
-.completed{
-	text-decoration: line-through;
-	opacity: 0.5;
-}
-.fall{
-	transform: translateY(8rem) rotateZ(20deg);
-	opacity: 0;
-}
-select{
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	outline: none;
-	box-shadow: none;
-	border: none;
-}
-.select{
-	margin: 1rem;
-	position: relative;
-	overflow: hidden;
-    
-}
-select{
-	color: #8E64C5;
-	width: 9rem;
-	cursor:auto;
-	padding: .6em;
-    font-size: 1.1em;
-    
-}
-.select::after{
-	content: "\25BC";
-	position: absolute;
-	color:#8E64C5;
-	background-color: white;
-	top: 0;
-	right: 0;
-	padding: 1rem;
-	pointer-events: none;
-	transition: all ease 0.3s;
-}
-.select:hover::after{
-	background-color: #8E64C5;
-	color: white;
+.todo-item {
+    padding: 0rem 0.5rem;
 }
 
-.todo-item{
+.fa-trash,
+.fa-check {
+    pointer-events: none;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.fall {
+    transform: translateY(8rem) rotateZ(20deg);
+    opacity: 0;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+
+.select {
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+
+}
+
+select {
+    color: #8E64C5;
+    width: 9rem;
+    cursor: auto;
+    padding: .6em;
+    font-size: 1.1em;
+
+}
+
+.select::after {
+    content: "\25BC";
+    position: absolute;
+    color: #8E64C5;
+    background-color: white;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    pointer-events: none;
+    transition: all ease 0.3s;
+}
+
+.select:hover::after {
+    background-color: #8E64C5;
+    color: white;
+}
+
+.todo-item {
     display: flex;
     align-items: center;
     margin-bottom: 1.5em;
     transition: all 0.5s ease;
 }
 
-.icon-task{
+.icon-task {
 
     width: 2.5em;
     padding-right: 1em;
@@ -391,7 +408,7 @@ select{
 
 
 
-.descricao{
+.descricao {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -402,64 +419,66 @@ select{
     border-radius: 25px;
 }
 
-.divInfo{
+.divInfo {
     display: flex;
     flex-direction: column;
     gap: 0.25em;
 
 }
 
-.containerData{
+.containerData {
     display: flex;
     flex-direction: row;
     gap: 0.4em;
 }
 
 
-.textoLimite{
-    color:red;
+.textoLimite {
+    color: red;
     text-decoration: underline;
- 
+
 }
 
-@media screen and (max-width: 600px) and (min-width: 200px), (min-width: 700px) {
+@media screen and (max-width: 600px) and (min-width: 200px),
+(min-width: 700px) {
     .nova-tarefa {
-     
-      display:flex-wrap wrap;
-      flex-direction:column;
-      align-content: center;
-      justify-content: center;
-      align-items: center;  
+
+        display: flex-wrap wrap;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
     }
 }
 
-@media screen and (max-width: 600px) and (min-width: 200px), (min-width: 700px) {
+@media screen and (max-width: 600px) and (min-width: 200px),
+(min-width: 700px) {
     .nova-tarefa {
-     
-      display:flex-wrap wrap;
-      flex-direction:column;
-      align-content: center;
-      justify-content: center;
-      align-items: center;  
+
+        display: flex-wrap wrap;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
     }
-    header{
-        padding: 0.3em;;
+
+    header {
+        padding: 0.3em;
+        ;
     }
 }
-  
-  
 
-  @media screen and (max-width: 1400px) and (min-width: 1000px), (min-width: 800px) {
+
+
+@media screen and (max-width: 1400px) and (min-width: 1000px),
+(min-width: 800px) {
     .nova-tarefa {
-      padding: 30px;
-      display:flex;
-      flex-direction:row;
-      align-content: center;
-      justify-content: center;
-      align-items: center;
-      
+        padding: 30px;
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+
     }
-  }
-
-
-
+}

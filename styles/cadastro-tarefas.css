@@ -15,7 +15,7 @@ form {
   display: inline-flex;
   align-items: center;
   flex-direction: column;
-  margin: 0 ;
+  margin: 0;
   box-shadow: 0 5px 5px lightgrey;
   padding: 2em 4em;
   box-sizing: border-box;
@@ -76,7 +76,7 @@ button {
   font-size: 2em;
 }
 
-div > div {
+div>div {
   display: inline-block;
 }
 
@@ -104,17 +104,18 @@ div > div {
   -webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
   transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
 }
+
 .first:hover {
   box-shadow: 0 0 40px 40px #e74c3c inset;
 }
 
 /*estilo inputs*/
-.label-float{
+.label-float {
   position: relative;
   padding-top: 15px;
 }
 
-.label-float input{
+.label-float input {
   border: 0;
   border-bottom: 2px solid lightgrey;
   outline: none;
@@ -123,22 +124,22 @@ div > div {
   transition: all .3s ease-out;
   -webkit-transition: all .3s ease-out;
   -moz-transition: all .3s ease-out;
-  -webkit-appearance:none;
-  
+  -webkit-appearance: none;
+
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
 
-.label-float input:focus{
+.label-float input:focus {
   border-bottom: 2px solid #3951b2;
 }
 
-.label-float input::placeholder{
-  color:transparent;
+.label-float input::placeholder {
+  color: transparent;
 }
 
-.label-float label{
+.label-float label {
   pointer-events: none;
   position: absolute;
   top: 0;
@@ -149,54 +150,55 @@ div > div {
   -moz-transition: all .3s ease-out;
 }
 
-.label-float input:required:invalid + label{
+.label-float input:required:invalid+label {
   color: red;
 }
-.label-float input:focus:required:invalid{
+
+.label-float input:focus:required:invalid {
   border-bottom: 2px solid red;
 }
-.label-float input:required:invalid + label:before{
+
+.label-float input:required:invalid+label:before {
   content: '*';
 }
-.label-float input:focus + label,
-.label-float input:not(:placeholder-shown) + label{
+
+.label-float input:focus+label,
+.label-float input:not(:placeholder-shown)+label {
   font-size: 13px;
   margin-top: 0;
   color: #3951b2;
 }
 
 .card {
-    color: white;
-    background-color: blue; 
-    margin-left: 390px;
-    margin-right: -356px;
-    width: 160px;
-    margin: 20px 15px;
-    display: inline-grid;
-    height: 160px;
-    
-  
-
+  color: white;
+  background-color: blue;
+  margin-left: 390px;
+  margin-right: -356px;
+  width: 160px;
+  margin: 20px 15px;
+  display: inline-grid;
+  height: 160px;
 }
 
 
 
 .card2 {
   /* Add shadows to create the "card" effect */
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  border-radius: 5px; /* 5px rounded corners */
+  border-radius: 5px;
+  /* 5px rounded corners */
   width: 15%;
   display: inline-block;
   border: 1px solid black;
   color: black;
-  background-color:lightgray; 
-  
+  background-color: lightgray;
+
 }
 
 /* On mouse-over, add a deeper shadow */
 .card2:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 /* Add some padding inside the card container */

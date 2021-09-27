@@ -2,24 +2,24 @@ let count = 0;
 
 const api = fetch('https://jsonplaceholder.typicode.com/todos/');
 
-let goahead = _ =>{
-  
+let goahead = _ => {
 
-produto=api.then(res => res.clone().json()).then(json => {
-  var obj = JSON.parse(JSON.stringify(json));
-  var length = Object.keys(obj).length;
-  const body = document.querySelector("body")
-  body.innerHTML = 
-  `<script src="./js/cadastroTarefas.js"></script>
+
+  produto = api.then(res => res.clone().json()).then(json => {
+    var obj = JSON.parse(JSON.stringify(json));
+    var length = Object.keys(obj).length;
+    const body = document.querySelector("body")
+    body.innerHTML =
+      `<script src="./js/cadastroTarefas.js"></script>
   <button type="submit" class="btn" id="enviar" onclick="goahead();">Card Push Ahead</button>
   <button type="submit" class="btn" id="enviar" onclick="goback();">Card Pull Back</button>
   <button type="submit" class="btn" id="enviar" onclick="allcards();">All Cards at once</button>
   <button type="submit" class="btn" id="enviar" onclick="removecards();">Remove All Cards</button>
   <br>
   `;
-  json.map(produto => {
-    if(produto.completed&&produto.id<=count){
-    let card = `
+    json.map(produto => {
+      if (produto.completed && produto.id <= count) {
+        let card = `
       <div class="card2">
         <img src="./assets/img_avatar2.jpg" alt="Avatar" style="width:100%">
         <div class="container2">
@@ -30,10 +30,10 @@ produto=api.then(res => res.clone().json()).then(json => {
         </div>
       </div>
     `;
-    
-    body.innerHTML += card;
-    }
-      if(!produto.completed&&produto.id<=count){
+
+        body.innerHTML += card;
+      }
+      if (!produto.completed && produto.id <= count) {
         let card = `
         <div class="card2">
         <img src="./assets/img_avatar.jpg" alt="Avatar" style="width:100%">
@@ -45,20 +45,20 @@ produto=api.then(res => res.clone().json()).then(json => {
         </div>
       </div>
         `;
-        
+
         body.innerHTML += card;
-    }
+      }
+    });
+    if (count < length) count++
   });
-  if(count<length)count++
-});
 }
 
 
-let goback = _ =>{
-  produto=api.then(res => res.clone().json()).then(json => {
+let goback = _ => {
+  produto = api.then(res => res.clone().json()).then(json => {
     const body = document.querySelector("body")
-    body.innerHTML = 
-    `<script src="./js/cadastroTarefas.js"></script>
+    body.innerHTML =
+      `<script src="./js/cadastroTarefas.js"></script>
     <button type="submit" class="btn" id="enviar" onclick="goahead();">Card Push Ahead</button>
     <button type="submit" class="btn" id="enviar" onclick="goback();">Card Pull Back</button>
     <button type="submit" class="btn" id="enviar" onclick="allcards();">All Cards at once</button>
@@ -66,8 +66,8 @@ let goback = _ =>{
     <br>
     `;
     json.map(produto => {
-      if(produto.completed&&produto.id<=count){
-      let card = `
+      if (produto.completed && produto.id <= count) {
+        let card = `
         <div class="card2">
           <img src="./assets/img_avatar2.jpg" alt="Avatar" style="width:100%">
           <div class="container2">
@@ -78,11 +78,11 @@ let goback = _ =>{
           </div>
         </div>
       `;
-      
-      body.innerHTML += card;
+
+        body.innerHTML += card;
       }
-        if(!produto.completed&&produto.id<=count){
-          let card = `
+      if (!produto.completed && produto.id <= count) {
+        let card = `
           <div class="card2">
           <img src="./assets/img_avatar.jpg" alt="Avatar" style="width:100%">
           <div class="container2">
@@ -93,19 +93,21 @@ let goback = _ =>{
           </div>
         </div>
           `;
-          
-          body.innerHTML += card;
+
+        body.innerHTML += card;
       }
     });
   });
-  if (count==0){count=0;}else count--;
-  }
+  if (count == 0) {
+    count = 0;
+  } else count--;
+}
 
 
-  let allcards = _ =>{
-    produto=api.then(res => res.clone().json()).then(json => {
-      const body = document.querySelector("body")
-      body.innerHTML = 
+let allcards = _ => {
+  produto = api.then(res => res.clone().json()).then(json => {
+    const body = document.querySelector("body")
+    body.innerHTML =
       `<script src="./js/cadastroTarefas.js"></script>
       <button type="submit" class="btn" id="enviar" onclick="goahead();">Card Push Ahead</button>
       <button type="submit" class="btn" id="enviar" onclick="goback();">Card Pull Back</button>
@@ -113,8 +115,8 @@ let goback = _ =>{
       <button type="submit" class="btn" id="enviar" onclick="removecards();">Remove All Cards</button>
       <br>
       `;
-      json.map(produto => {
-        if(produto.completed&&produto.id){
+    json.map(produto => {
+      if (produto.completed && produto.id) {
         let card = `
           <div class="card2">
             <img src="./assets/img_avatar2.jpg" alt="Avatar" style="width:100%">
@@ -126,11 +128,11 @@ let goback = _ =>{
             </div>
           </div>
         `;
-        
+
         body.innerHTML += card;
-        }
-          if(!produto.completed&&produto.id){
-            let card = `
+      }
+      if (!produto.completed && produto.id) {
+        let card = `
             <div class="card2">
             <img src="./assets/img_avatar.jpg" alt="Avatar" style="width:100%">
             <div class="container2">
@@ -141,25 +143,23 @@ let goback = _ =>{
             </div>
           </div>
             `;
-            
-            body.innerHTML += card;
-        }
-      });
-      count=200;
-    });
-    }
 
-    let removecards = _ =>{
-        const body = document.querySelector("body")
-        body.innerHTML = 
-        `<script src="./js/cadastroTarefas.js"></script>
+        body.innerHTML += card;
+      }
+    });
+    count = 200;
+  });
+}
+
+let removecards = _ => {
+  const body = document.querySelector("body")
+  body.innerHTML =
+    `<script src="./js/cadastroTarefas.js"></script>
         <button type="submit" class="btn" id="enviar" onclick="goahead();">Card Push Ahead</button>
         <button type="submit" class="btn" id="enviar" onclick="goback();">Card Pull Back</button>
         <button type="submit" class="btn" id="enviar" onclick="allcards();">All Cards at once</button>
         <button type="submit" class="btn" id="enviar" onclick="removecards();">Remove All Cards</button>
         <br>
         `;
-        count=0;
-      }
-    
-    
+  count = 0;
+}
