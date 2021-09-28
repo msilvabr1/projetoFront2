@@ -9,16 +9,18 @@ h1 {
 
 form {
   position: relative;
-  height: 100vh;
+  height: 92vh;
   width: 30em;
   background-color: white;
   display: flex;
   align-items: center;
   flex-direction: column;
   margin: 0 calc(50% - 15em);
-  box-shadow: 0 5px 5px lightgrey;
+  box-shadow: 10px 10px 10px lightgrey;
   padding: 2em 4em;
   box-sizing: border-box;
+  border-radius: 35px;
+  margin-top: 30px;
 }
 
 .botoes {
@@ -32,7 +34,7 @@ form:after {
   height: 100%;
   top: 0;
   left: 0;
-  background: linear-gradient(var(--primary), var(--secondary));
+  background: linear-gradient(var(--primary));
 }
 
 .image {

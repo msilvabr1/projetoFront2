@@ -11,10 +11,10 @@ let goahead = _ => {
     const body = document.querySelector("body")
     body.innerHTML =
       `<script src="./js/cadastroTarefas.js"></script>
-  <button type="submit" class="btn" id="enviar" onclick="goahead();">Card Push Ahead</button>
-  <button type="submit" class="btn" id="enviar" onclick="goback();">Card Pull Back</button>
-  <button type="submit" class="btn" id="enviar" onclick="allcards();">All Cards at once</button>
-  <button type="submit" class="btn" id="enviar" onclick="removecards();">Remove All Cards</button>
+     <button type="submit" class="redirecionamento" id="enviar" onclick="goahead();">Adicionar Card</button>
+     <button type="submit" class="redirecionamento" id="enviar" onclick="goback();">Remover Card</button>
+     <button type="submit" class="redirecionamento" id="enviar" onclick="allcards();">Carregar todos os Cards</button>
+     <button type="submit" class="redirecionamento" id="enviar" onclick="removecards();">Remover todos os Cards</button>
   <br>
   `;
     json.map(produto => {
@@ -59,11 +59,11 @@ let goback = _ => {
     const body = document.querySelector("body")
     body.innerHTML =
       `<script src="./js/cadastroTarefas.js"></script>
-    <button type="submit" class="btn" id="enviar" onclick="goahead();">Card Push Ahead</button>
-    <button type="submit" class="btn" id="enviar" onclick="goback();">Card Pull Back</button>
-    <button type="submit" class="btn" id="enviar" onclick="allcards();">All Cards at once</button>
-    <button type="submit" class="btn" id="enviar" onclick="removecards();">Remove All Cards</button>
-    <br>
+       <button type="submit" class="redirecionamento" id="enviar" onclick="goahead();">Adicionar Card</button>
+      <button type="submit" class="redirecionamento" id="enviar" onclick="goback();">Remover Card</button>
+      <button type="submit" class="redirecionamento" id="enviar" onclick="allcards();">Carregar todos os Cards</button>
+      <button type="submit" class="redirecionamento" id="enviar" onclick="removecards();">Remover todos os Cards</button>
+      <br>
     `;
     json.map(produto => {
       if (produto.completed && produto.id <= count) {
@@ -109,10 +109,10 @@ let allcards = _ => {
     const body = document.querySelector("body")
     body.innerHTML =
       `<script src="./js/cadastroTarefas.js"></script>
-      <button type="submit" class="btn" id="enviar" onclick="goahead();">Card Push Ahead</button>
-      <button type="submit" class="btn" id="enviar" onclick="goback();">Card Pull Back</button>
-      <button type="submit" class="btn" id="enviar" onclick="allcards();">All Cards at once</button>
-      <button type="submit" class="btn" id="enviar" onclick="removecards();">Remove All Cards</button>
+      <button type="submit" class="redirecionamento" id="enviar" onclick="goahead();">Adicionar Card</button>
+      <button type="submit" class="redirecionamento" id="enviar" onclick="goback();">Remover Card</button>
+      <button type="submit" class="redirecionamento" id="enviar" onclick="allcards();">Carregar todos os Cards</button>
+      <button type="submit" class="redirecionamento" id="enviar" onclick="removecards();">Remover todos os Cards</button>
       <br>
       `;
     json.map(produto => {
@@ -155,11 +155,11 @@ let removecards = _ => {
   const body = document.querySelector("body")
   body.innerHTML =
     `<script src="./js/cadastroTarefas.js"></script>
-        <button type="submit" class="btn" id="enviar" onclick="goahead();">Card Push Ahead</button>
-        <button type="submit" class="btn" id="enviar" onclick="goback();">Card Pull Back</button>
-        <button type="submit" class="btn" id="enviar" onclick="allcards();">All Cards at once</button>
-        <button type="submit" class="btn" id="enviar" onclick="removecards();">Remove All Cards</button>
-        <br>
+    <button type="submit" class="redirecionamento" id="enviar" onclick="goahead();">Adicionar Card</button>
+    <button type="submit" class="redirecionamento" id="enviar" onclick="goback();">Remover Card</button>
+    <button type="submit" class="redirecionamento" id="enviar" onclick="allcards();">Carregar todos os Cards</button>
+    <button type="submit" class="redirecionamento" id="enviar" onclick="removecards();">Remover todos os Cards</button>
+    <br>
         `;
   count = 0;
 }
