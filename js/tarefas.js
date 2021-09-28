@@ -408,7 +408,7 @@ function getTodos() {
 
 }
 
-//função que remove da lista
+//função que remove do local storage
 function removeLocalTodos(todo) {
     let todos
     //check
@@ -416,8 +416,12 @@ function removeLocalTodos(todo) {
         todos = []
     } else {
         todos = JSON.parse(localStorage.getItem("todos"))
-    }
-    const todoIndex = todo.children[0].innerText
-    todos.splice(todos.indexOf(todoIndex), 1)
-    localStorage.setItem("todos", JSON.stringify(todos))
+    } 
+    console.log(todo.id)
+    todos.forEach(function(el,indice){
+        if(el.id == todo.id)
+        todos.splice(indice,1)
+        
+    })
+    localStorage.setItem("todos",JSON.stringify(todos))
 }
