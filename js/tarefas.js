@@ -29,10 +29,15 @@ let dia = date.getDate();
 let mes = 1 + date.getMonth();
 let ano = date.getFullYear();
 let data_atual
-if (mes >= 10) {
-    data_atual = ano + "-" + mes + "-" + dia
-} else
+
+ if(mes < 10 && dia < 10){
     mes = "0" + mes
+    dia = "0" + dia
+ }else if(mes < 10){
+    mes = "0" + mes
+ }else (dia <10) 
+    dia = "0" + dia
+
 data_atual = ano + "-" + mes + "-" + dia
 
 console.log(data_atual)
