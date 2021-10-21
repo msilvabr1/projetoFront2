@@ -35,7 +35,7 @@ let data_atual
     dia = "0" + dia
  }else if(mes < 10){
     mes = "0" + mes
- }else (dia <10) 
+ }else if (dia <10) 
     dia = "0" + dia
 
 data_atual = ano + "-" + mes + "-" + dia
